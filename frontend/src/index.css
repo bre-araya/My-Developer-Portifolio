@@ -8,12 +8,30 @@
     box-sizing: border-box;
   }
 
+  :root {
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+    --text-color: #0f172a;
+    --muted-bg: #f8fafc;
+    --card-bg: rgba(255,255,255,0.6);
+    --glass-border: rgba(255,255,255,0.18);
+  }
+
+  .dark {
+    --bg-gradient: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);
+    --text-color: #e6edf3;
+    --muted-bg: #071029;
+    --card-bg: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.06);
+  }
+
   body {
-    @apply bg-gradient-to-br from-slate-50 to-gray-100 text-gray-900;
+    background: var(--bg-gradient);
+    color: var(--text-color);
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background 0.45s ease, color 0.45s ease;
   }
 
   ::selection {
@@ -56,10 +74,10 @@
   }
 
   .glass-effect {
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid var(--glass-border);
   }
 
   .card-shadow {
