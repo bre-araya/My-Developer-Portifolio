@@ -5,7 +5,7 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
-import Testimonials from "../components/Testimonials";
+import Certifications from "../components/Certifications";
 
 export default function Home() {
   const location = useLocation();
@@ -76,10 +76,10 @@ export default function Home() {
       <section id="experience">
         <Experience />
       </section>
-      <section id="testimonials">
-        <Testimonials />
+      <section id="certifications">
+        <Certifications />
       </section>
-        <Contact />
+      <Contact />
     </div>
   );
 }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="s3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d6a4f" />
+      <stop offset="100%" stop-color="#40916c" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="40" fill="#f8fafc" />
+  <rect x="60" y="60" width="680" height="480" rx="36" fill="url(#s3)" opacity="0.15" />
+  <rect x="80" y="100" width="640" height="400" rx="30" fill="#ffffff" />
+  <text x="120" y="180" font-family="Inter, sans-serif" font-size="48" fill="#2f6f4e" font-weight="700">Django & Python</text>
+  <text x="120" y="240" font-family="Inter, sans-serif" font-size="28" fill="#2b6b4f">Expert Certification</text>
+  <text x="120" y="320" font-family="Inter, sans-serif" font-size="22" fill="#2f6f4e">Backend Systems · API Security</text>
+  <text x="120" y="380" font-family="Inter, sans-serif" font-size="20" fill="#2b6b4f">Issued by Coursera · Jan 2025</text>
+  <path d="M620 380c0 44-36 80-80 80s-80-36-80-80 36-80 80-80 80 36 80 80z" fill="#2f6f4e" opacity="0.25" />
+  <path d="M560 360h80v80h-80z" fill="#2f6f4e" />
+</svg>

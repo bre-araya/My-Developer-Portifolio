@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,7 +19,7 @@ export default function Navbar() {
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'testimonials', label: 'Certifications' },
+    { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -26,7 +27,7 @@ export default function Navbar() {
     <>
       {/* Mobile Overlay */}
       <div 
-        className={`fixed inset-0 bg-black/50 z-40 
+        className={`fixed inset-0 bg-black/20 z-40 
           transition-opacity duration-300 md:hidden 
           ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsOpen(false)}
@@ -55,32 +56,22 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button 
-            className="md:hidden p-2 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="w-6 h-5 flex flex-col justify-between items-end">
-              <span className={`block h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300
-                          ${isOpen ? 'w-6 rotate-45 translate-y-2' : 'w-full'}`}></span>
-              <span className={`block h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300 
-                          ${isOpen ? 'opacity-0' : 'w-4'}`}></span>
-              <span className={`block h-0.5 bg-gray-800 dark:bg-gray-200 transition-all duration-300 
-                          ${isOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-full'}`}></span>
-            </div>
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle className="shadow-none" />
+            <button
+              className="p-2 text-2xl leading-none focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isOpen ? '✖' : '☰'}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation Menu */}
         <div className={`md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-xl 
           transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-4 py-4 space-y-2">
-            <div className="flex items-center justify-between px-2">
-              <div className="text-sm font-semibold">Menu</div>
-              <ThemeToggle />
-            </div>
-            <div className="h-2" />
             {navLinks.map((link) => (
               <button 
                 key={link.id} 

@@ -26,22 +26,40 @@ export default function ThemeToggle({ className = '' }) {
   }, [theme]);
 
   const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+  const isDark = theme === 'dark';
+  const targetLabel = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  const targetMode = isDark ? 'Light' : 'Dark';
 
   return (
     <button
-      aria-label="Toggle theme"
+      aria-label={targetLabel}
+      title={targetLabel}
       onClick={toggle}
-      className={`p-2 rounded-full transition-transform duration-300 hover:scale-105 ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/90 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm shadow-slate-200/60 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-slate-700/80 dark:bg-slate-900/90 dark:text-slate-100 dark:shadow-none ${className}`}
     >
-      {theme === 'dark' ? (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-300" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 3.1a1 1 0 0 1 .9 1.1A7 7 0 1 0 20 12a1 1 0 0 1 1.1.9A9 9 0 1 1 12 3.1z" />
+      {isDark ? (
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" fill="currentColor"
+          className="h-5 w-5 text-white-400">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"
+          />
         </svg>
       ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M6.76 4.84l-1.8-1.79L3.17 4.84 4.97 6.63 6.76 4.84zM1 13h3v-2H1v2zm10 8h2v-3h-2v3zm7.24-2.16l1.8 1.79 1.79-1.79-1.79-1.79-1.8 1.79zM20 11v2h3v-2h-3zM4.93 19.07l1.79-1.79-1.79-1.79-1.8 1.79 1.8 1.79zM12 6a6 6 0 100 12A6 6 0 0012 6z" />
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" fill="currentColor"
+          className="h-5 w-5 text-slate-700 dark:text-slate-200">
+          <path
+            d="M21.75 15.59A9.25 9.25 0 0 1 12 2.25
+            9.25 9.25 0 1 0 21.75 15.59z"
+          />
         </svg>
       )}
+      <span>{targetMode}</span>
     </button>
   );
 }
