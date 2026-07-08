@@ -64,19 +64,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about">
+      <section id="about" className="pt-0 md:pt-0">
         <About />
       </section>
-      <section id="skills">
+      <section id="skills" className="pt-0 md:pt-0">
         <Skills />
       </section>
-      <section id="projects">
+      <section id="projects" className="pt-0 md:pt-0">
         <Projects />
       </section>
-      <section id="experience">
+      <section id="experience" className="pt-0 md:pt-0">
         <Experience />
       </section>
-      <section id="certifications">
+      <section id="certifications" className="pt-0 md:pt-0">
         <Certifications />
       </section>
       <Contact />
