@@ -18,12 +18,12 @@ export default function Home() {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  }, [location]);
+  }, [location]);// this is dependency array, it means that the effect will run whenever the location changes. This is important because we want to scroll to the correct section whenever the user navigates to a different route or clicks on a link that changes the URL hash.
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });// the block: 'start' option ensures that the top of the section aligns with the top of the viewport when scrolled into view.
     } else {
       console.warn(`Element with id "${sectionId}" not found`);
     }
