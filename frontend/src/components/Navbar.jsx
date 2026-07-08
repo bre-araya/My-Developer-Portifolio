@@ -32,11 +32,13 @@ export default function Navbar() {
           ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setIsOpen(false)}
       />
-      
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/90 shadow-lg">
+      {/* fixed top-0 left-0 right-0 z-50 -> indicates Navbar stays above everything with full width */}
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/70 bg-white/80
+            backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/90 shadow-lg">
         <div className="flex justify-between items-center py-4 px-4 md:px-20">
           {/* Logo */}
-          <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent select-none hover:scale-105 transition-transform duration-300">
+          <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 
+          bg-clip-text text-transparent select-none hover:scale-105 transition-transform duration-300">
             Berihu Araya
           </h1>
 
@@ -46,7 +48,7 @@ export default function Navbar() {
               <button 
                 key={link.id} 
                 onClick={() => scrollToSection(link.id)} 
-                className="nav-link whitespace-nowrap"
+                className="nav-link whitespace-nowrap"  /* used for prevent text wrapping! */
               >
                 {link.label}
               </button>
@@ -56,10 +58,12 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1 md:hidden">  {/*this md:hidden mean Hide this div on medium and large screens */} 
             <ThemeToggle className="shadow-none" />
             <button
-              className="rounded-lg border border-slate-300 bg-white/80 p-2 text-2xl leading-none text-slate-700 shadow-sm transition-colors hover:border-blue-500 hover:text-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200"
+              className="rounded-lg border border-slate-500 bg-white/80 p-1 text-2xl leading-none 
+              text-slate-700 shadow-sm transition-colors hover:border-blue-500 hover:text-blue-600 
+              focus:outline-none dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
@@ -69,13 +73,17 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`md:hidden fixed inset-x-0 top-16 z-40 border-t border-slate-300 bg-white/95 backdrop-blur-xl shadow-xl transition-all duration-300 dark:border-slate-700 dark:bg-slate-950/95 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
-          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-4 space-y-2">
+        <div className={`md:hidden fixed inset-x-0 top-16 z-40 border-t border-slate-300 bg-white/95
+            backdrop-blur-xl shadow-xl transition-all duration-300 dark:border-slate-700 
+            dark:bg-slate-950/95 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-4">
             {navLinks.map((link) => (
               <button 
                 key={link.id} 
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left py-3 px-4 text-slate-700 hover:text-blue-600 hover:bg-blue-50 dark:text-slate-300 dark:hover:text-blue-400 dark:hover:bg-slate-800/80 rounded-lg transition-colors font-medium"
+                className="block w-full text-left py-3 px-4 text-slate-700 hover:text-blue-600 
+                hover:bg-blue-50 dark:text-slate-300 dark:hover:text-blue-400 dark:hover:bg-slate-800/80
+                  rounded-lg transition-colors font-medium"
               >
                 {link.label}
               </button>
