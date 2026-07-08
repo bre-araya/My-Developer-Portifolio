@@ -9,8 +9,8 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div className="glass-effect rounded-2xl p-6 md:p-8 card-shadow fade-in">
           <div className="mb-6">
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3 md:mb-4">My Background</h3>
-            <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+            <h3 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-3 md:mb-4">My Background</h3>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base">
               I am a Computer Science and Engineering graduate from Mekelle University,
               specializing in MERN full-stack development, Odoo ERP customization, and
               Python/Django backend systems.
