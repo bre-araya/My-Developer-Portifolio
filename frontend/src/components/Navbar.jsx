@@ -24,7 +24,7 @@ export default function Navbar() {
   ];
 
   return (
-    <>
+    <> {/* React Fragment used for return multiple elements instead of <div> in javascript*/}
       {/* Mobile Overlay */}
       <div 
         className={`fixed inset-0 bg-black/20 z-40 
@@ -59,7 +59,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle className="shadow-none" />
             <button
-              className="p-2 text-2xl leading-none focus:outline-none"
+              className="rounded-lg border border-slate-300 bg-white/80 p-2 text-2xl leading-none text-slate-700 shadow-sm transition-colors hover:border-blue-500 hover:text-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`md:hidden fixed inset-x-0 top-16 z-40 bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 shadow-xl transition-all duration-300 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+        <div className={`md:hidden fixed inset-x-0 top-16 z-40 border-t border-slate-300 bg-white/95 backdrop-blur-xl shadow-xl transition-all duration-300 dark:border-slate-700 dark:bg-slate-950/95 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
           <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <button 
