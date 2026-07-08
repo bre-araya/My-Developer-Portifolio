@@ -1,50 +1,69 @@
 import { useState } from 'react';
+import aiCertificate from '../assets/Artificial Intelligence.png';
+import dataVisualizationCertificate from '../assets/Data Visualizations from courcera.png';
+import pythonMachineLearningCertificate from '../assets/Python ML.png';
+import webDevelopmentCertificate from '../assets/Web Development from IBM.png';
 
 const certifications = [
   {
-    id: 'odoo-functional',
-    title: 'Odoo Functional Certification',
-    topic: 'ERP Implementation',
-    issuer: 'Odoo',
-    date: 'April 2025',
-    description: 'Validated skills in Odoo configuration, workflow automation, and enterprise resource planning for manufacturing, sales, and inventory management.',
-    highlights: [
-      'ERP module setup and customization',
-      'Business process automation',
-      'Data migration and reporting',
-    ],
-    image: '/certificates/odoo.svg',
-    link: '/certificates/odoo.svg',
-  },
-  {
-    id: 'mern-stack',
-    title: 'MERN Full-Stack Certification',
-    topic: 'Web Application Architecture',
-    issuer: 'Fullstack Academy',
-    date: 'November 2024',
-    description: 'Demonstrated end-to-end MERN development capability through scalable web applications with React, Node.js, Express, and MongoDB.',
-    highlights: [
-      'Responsive UI with React',
-      'API design with Express',
-      'MongoDB data modeling',
-    ],
-    image: '/certificates/mern.svg',
-    link: '/certificates/mern.svg',
-  },
-  {
-    id: 'django-python',
-    title: 'Python & Django Expert Certification',
-    topic: 'Backend Systems',
+    id: 'artificial-intelligence',
+    title: 'Artificial Intelligence',
+    topic: 'AI Foundations',
     issuer: 'Coursera',
-    date: 'January 2025',
-    description: 'Proved expertise in Django backend engineering, REST API development, security hardening, and performant database-backed systems.',
+    date: '2025',
+    description: 'Highlights foundational understanding of AI concepts, applied workflows, and practical problem-solving approaches.',
     highlights: [
-      'REST API design',
-      'Django app architecture',
-      'Security and testing best practices',
+      'Core AI concepts',
+      'Applied learning workflows',
+      'Practical problem-solving',
     ],
-    image: '/certificates/django.svg',
-    link: '/certificates/django.svg',
+    image: aiCertificate,
+    link: aiCertificate,
+  },
+  {
+    id: 'data-visualization',
+    title: 'Data Visualization',
+    topic: 'Data Storytelling',
+    issuer: 'Coursera',
+    date: '2025',
+    description: 'Showcases the ability to create clear, insightful visual narratives from data using modern visualization techniques.',
+    highlights: [
+      'Visual data storytelling',
+      'Effective chart design',
+      'Audience-focused insights',
+    ],
+    image: dataVisualizationCertificate,
+    link: dataVisualizationCertificate,
+  },
+  {
+    id: 'python-machine-learning',
+    title: 'Python Machine Learning',
+    topic: 'Machine Learning',
+    issuer: 'Coursera',
+    date: '2025',
+    description: 'Demonstrates practical knowledge of Python-based machine learning concepts and model development.',
+    highlights: [
+      'Python ML workflows',
+      'Model development',
+      'Data-driven experimentation',
+    ],
+    image: pythonMachineLearningCertificate,
+    link: pythonMachineLearningCertificate,
+  },
+  {
+    id: 'web-development-ibm',
+    title: 'Web Development',
+    topic: 'Frontend Development',
+    issuer: 'IBM',
+    date: '2025',
+    description: 'Reflects hands-on experience building polished, responsive web applications with modern development practices.',
+    highlights: [
+      'Responsive interfaces',
+      'Web app development',
+      'Modern frontend practices',
+    ],
+    image: webDevelopmentCertificate,
+    link: webDevelopmentCertificate,
   },
 ];
 
@@ -116,9 +135,9 @@ export default function Certifications() {
       </div>
 
       {selectedCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
-          <div className="w-full max-w-5xl overflow-hidden rounded-[2rem] bg-white shadow-2xl dark:bg-slate-900">
-            <div className="flex flex-col gap-4 border-b border-slate-200 px-6 py-5 dark:border-slate-800 lg:flex-row lg:items-center lg:justify-between">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 p-3 sm:p-4">
+          <div className="mx-auto my-3 flex w-full max-w-5xl flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl dark:bg-slate-900 sm:my-4">
+            <div className="relative flex flex-col gap-4 border-b border-slate-200 px-4 py-4 dark:border-slate-800 sm:px-6 sm:py-5 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-blue-600 dark:text-blue-300 font-semibold">Certificate Preview</p>
                 <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">{selectedCert.title}</h3>
@@ -127,18 +146,18 @@ export default function Certifications() {
               <button
                 type="button"
                 onClick={() => setSelectedCert(null)}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+                className="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 sm:static sm:ml-auto"
               >
                 ✕
               </button>
             </div>
 
-            <div className="grid gap-6 lg:grid-cols-[1.3fr_0.9fr] p-6">
-              <div className="rounded-[1.75rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950">
+            <div className="grid gap-6 overflow-y-auto p-4 sm:p-6 lg:grid-cols-[1.3fr_0.9fr]">
+              <div className="flex items-center justify-center overflow-auto rounded-[1.75rem] border border-slate-200 bg-slate-100 p-2 dark:border-slate-800 dark:bg-slate-950 sm:p-4">
                 <img
                   src={selectedCert.image}
                   alt={`${selectedCert.title} certificate`}
-                  className="h-full w-full object-cover"
+                  className="max-h-[70vh] w-full object-contain"
                 />
               </div>
               <div className="space-y-5">
