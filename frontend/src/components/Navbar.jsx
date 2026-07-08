@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -13,15 +17,80 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'about', label: 'About', icon: '👨‍💻' },
-    { id: 'skills', label: 'Skills', icon: '🛠️' },
-    { id: 'experience', label: 'Experience', icon: '📅' },
-    { id: 'projects', label: 'Projects', icon: '🚀' },
-    { id: 'certifications', label: 'Certifications', icon: '🏅' },
-    { id: 'contact', label: 'Contact', icon: '📩' },
-  ];
+  const navLinks = useMemo(() => [
+    { id: 'home', label: 'Home', icon: '🏠', path: '/' },
+    { id: 'about', label: 'About', icon: '👨‍💻', path: '/about' },
+    { id: 'skills', label: 'Skills', icon: '🛠️', path: '/skills' },
+    { id: 'experience', label: 'Experience', icon: '📅', path: '/experience' },
+    { id: 'projects', label: 'Projects', icon: '🚀', path: '/projects' },
+    { id: 'certifications', label: 'Certifications', icon: '🏅', path: '/' },
+    { id: 'contact', label: 'Contact', icon: '📩', path: '/contact' },
+  ], []);
+
+  const getActiveLinkId = (pathname) => {
+    const routeMap = {
+      '/about': 'about',
+      '/skills': 'skills',
+      '/experience': 'experience',
+      '/projects': 'projects',
+      '/contact': 'contact',
+    };
+
+    return routeMap[pathname] || 'home';
+  };
+
+  const handleNavClick = (link) => {
+    setIsOpen(false);
+    setActiveSection(link.id);
+
+    if (location.pathname === '/' && document.getElementById(link.id)) {
+      scrollToSection(link.id);
+      return;
+    }
+
+    if (link.path === '/') {
+      navigate('/');
+      requestAnimationFrame(() => {
+        scrollToSection(link.id);
+      });
+      return;
+    }
+
+    navigate(link.path);
+  };
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection(getActiveLinkId(location.pathname));
+      return undefined;
+    }
+
+    const sections = navLinks
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean);
+
+    if (!sections.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      {
+        threshold: [0.2, 0.4, 0.6],
+        rootMargin: '-20% 0px -45% 0px',
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [location.pathname, navLinks]);
 
   return (
     <> {/* React Fragment used for return multiple elements instead of <div> in javascript*/}
@@ -43,24 +112,29 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm font-medium">
-            {navLinks.map((link) => (
-              <button 
-                key={link.id} 
-                onClick={() => scrollToSection(link.id)} 
-                className="nav-link whitespace-nowrap"  /* used for prevent text wrapping! */
-              >
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavClick(link)}
+                  className={`nav-link whitespace-nowrap ${isActive ? 'active' : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                </button>
+              );
+            })}
             <div className="ml-2">
               <ThemeToggle />
             </div>
           </div>
 
-          <div className="flex items-center gap-1 md:hidden">  {/*this md:hidden mean Hide this div on medium and large screens */} 
+          <div className="flex items-center gap-2 md:hidden">  {/*this md:hidden mean Hide this div on medium and large screens */} 
             <ThemeToggle className="shadow-none" />
             <button
-              className="p-2 text-2xl leading-none focus:outline-none"
+              className="rounded-lg border border-slate-300 bg-white/90 p-2 text-2xl leading-none text-slate-700 shadow-sm transition-colors hover:border-blue-500 hover:text-blue-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-200"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
@@ -70,26 +144,28 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-xl 
-          transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="px-4 py-4 space-y-2">
-            {navLinks.map((link) => (
-              <button 
-                key={link.id} 
-                onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50
-                  rounded-lg transition-colors font-medium"
-              >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-lg shadow-sm dark:bg-slate-800">{link.icon}</span>
-                <span>{link.label}</span>
-              </button>
-            ))}
+        <div className={`md:hidden fixed inset-x-0 top-16 z-40 border-t border-slate-300 bg-white/95 backdrop-blur-xl shadow-xl transition-all duration-300 dark:border-slate-700 dark:bg-slate-950/95 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-4 space-y-2">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavClick(link)}
+                  className={`flex w-full cursor-pointer items-center gap-3 rounded-lg px-4 py-3 text-left font-medium transition-colors ${isActive ? 'bg-blue-50 text-blue-600 dark:bg-slate-800/80 dark:text-blue-400' : 'text-slate-700 hover:bg-blue-50 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800/80 dark:hover:text-blue-400'}`}
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-lg shadow-sm dark:bg-slate-800">{link.icon}</span>
+                  <span className="truncate whitespace-nowrap">{link.label}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </nav>
 
       {/* Spacer to prevent content from being hidden behind fixed nav */}
-      <div className="h-16 md:h-20" />
+      <div className="h-14 md:h-16" />
     </>
   );
 }
