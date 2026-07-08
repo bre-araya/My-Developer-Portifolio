@@ -33,7 +33,7 @@ export default function Navbar() {
         onClick={() => setIsOpen(false)}
       />
       
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-lg">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/90 shadow-lg">
         <div className="flex justify-between items-center py-4 px-4 md:px-20">
           {/* Logo */}
           <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent select-none hover:scale-105 transition-transform duration-300">
@@ -69,15 +69,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-xl 
-          transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="px-4 py-4 space-y-2">
+        <div className={`md:hidden fixed inset-x-0 top-16 z-40 bg-white/95 backdrop-blur-xl dark:bg-slate-950/95 shadow-xl transition-all duration-300 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
+          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <button 
                 key={link.id} 
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50
-                  rounded-lg transition-colors font-medium"
+                className="block w-full text-left py-3 px-4 text-slate-700 hover:text-blue-600 hover:bg-blue-50 dark:text-slate-300 dark:hover:text-blue-400 dark:hover:bg-slate-800/80 rounded-lg transition-colors font-medium"
               >
                 {link.label}
               </button>

@@ -28,7 +28,7 @@ export default function ProjectCard({
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
             <div className="text-6xl opacity-50">🚀</div>
           </div>
         )}
@@ -69,11 +69,11 @@ export default function ProjectCard({
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-3 hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-3 hover:text-blue-600 transition-colors">
           {title}
         </h3>
 
-        <p className="text-gray-600 mb-4 leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
           {description}
         </p>
 
@@ -82,7 +82,7 @@ export default function ProjectCard({
           {tech.map((technology, index) => (
             <span
               key={index}
-              className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full border border-blue-200"
+              className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full border border-blue-200 dark:from-slate-800 dark:to-slate-700 dark:text-slate-200 dark:border-slate-700"
             >
               {technology}
             </span>
@@ -106,7 +106,7 @@ export default function ProjectCard({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 border-2 border-gray-300 text-gray-700 text-center py-2 px-4 rounded-lg font-medium hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+              className="flex-1 border-2 border-gray-300 text-gray-700 text-center py-2 px-4 rounded-lg font-medium hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:bg-slate-800"
             >
               Source Code
             </a>
