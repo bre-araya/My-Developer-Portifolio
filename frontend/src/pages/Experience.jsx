@@ -2,29 +2,31 @@ export default function Experience() {
   const experiences = [
     {
       company: "Niyat Consultancy & Software Company",
-      position: "Software Developer",
-      period: "2023 - Present",
-      description: "Developed and maintained backend APIs, ERP systems, and scalable web applications using modern technologies. Implemented full-stack solutions with Node.js, Django, and various databases.",
+      position: "Odoo Developer",
+      period: "September 2025 - Present",
+      description: "As an Odoo Developer, I design, customize, and maintain business management solutions that streamline workflows and improve operational efficiency. I collaborate with cross-functional teams to develop scalable ERP modules, integrate third-party services, and deliver reliable business applications tailored to client requirements.",
       achievements: [
-        "Built RESTful APIs serving 10,000+ requests daily",
-        "Customized Odoo ERP modules for client requirements",
-        "Optimized database queries improving performance by 40%",
-        "Collaborated with cross-functional teams on enterprise solutions"
+        "Developed and customized Odoo modules using Python and the Odoo framework to meet diverse business requirements",
+        "Designed and extended ERP functionalities across Sales, Purchase, Inventory, Accounting, HR, CRM, and other business modules",
+        "Built custom models, views, reports, workflows, and automated business processes",
+        "Created REST API integrations with external systems and third-party services for seamless data exchange",
+        "Implemented backend business logic with clean, maintainable, and scalable code following software engineering best practices"
       ],
-      technologies: ["Node.js", "Django", "PostgreSQL", "MongoDB", "Odoo"]
+      technologies: ["Odoo", "Python", "PostgreSQL", "XML", "JavaScript", "REST APIs", "Git"]
     },
     {
-      company: "Freelance Developer",
-      position: "Full-Stack Developer",
-      period: "2022 - 2023",
-      description: "Delivered custom web applications and software solutions for various clients. Specialized in MERN stack development and Python backend services.",
+      company: "Geez EdTech",
+      position: "Software Developer Intern (Backend Developer)",
+      period: "June 2025 - September 2025",
+      description: "Worked as a Backend Developer, contributing to the development of scalable web applications using the MERN stack. Collaborated with frontend developers and senior engineers to build secure APIs, manage databases, and implement backend business logic for real-world applications.",
       achievements: [
-        "Completed 15+ client projects with 100% satisfaction rate",
-        "Developed AI-powered chatbot for customer support",
-        "Created plant disease detection platform using machine learning",
-        "Implemented secure authentication systems"
+        "Developed RESTful APIs using Node.js and Express.js",
+        "Designed and managed MongoDB databases with efficient schema design and query optimization",
+        "Implemented backend business logic, authentication, and authorization using JWT",
+        "Integrated frontend applications with backend services to ensure seamless data flow",
+        "Built CRUD operations and optimized API performance for scalability and reliability"
       ],
-      technologies: ["React", "Node.js", "Python", "MongoDB", "TensorFlow"]
+      technologies: ["MongoDB", "Express.js", "React", "Node.js", "JavaScript", "REST APIs", "JWT", "Git", "GitHub"]
     }
   ];
 

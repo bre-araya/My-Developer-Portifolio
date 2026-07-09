@@ -21,12 +21,12 @@ export default function Projects() {
       featured: true
     },
     {
-      title: "MERN E-Commerce Platform",
-      description: "Full-stack e-commerce solution with user authentication, product management, shopping cart, payment integration, and admin dashboard. Features real-time inventory updates and order tracking.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
+      title: "Full-Stack E-Commerce Platform",
+      description: "Developed a scalable full-stack e-commerce application with secure JWT authentication, product management, shopping cart, order processing, and an admin dashboard. Built RESTful APIs, integrated Cloudinary for image uploads, and implemented inventory management, product reviews, and role-based access control.",
+      tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Cloudinary"],
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      liveLink: "https://mern-ecommerce-demo.vercel.app",
-      githubLink: "https://github.com/berihu-araya/mern-ecommerce"
+      liveLink: "https://github.com/bre-araya/E-Commerce",
+      githubLink: "https://github.com/bre-araya/E-Commerce"
     },
     {
       title: "AI Chatbot for Customer Support",

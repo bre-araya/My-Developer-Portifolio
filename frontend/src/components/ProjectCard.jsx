@@ -34,27 +34,17 @@ export default function ProjectCard({
         )}
 
         {/* Overlay on hover */}
-        <div className={`absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center space-x-4 transition-opacity duration-300 ${
+        <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
-          {liveLink && (
+          {(liveLink || githubLink) && (
             <a
-              href={liveLink}
+              href={liveLink || githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Live Demo
-            </a>
-          )}
-          {githubLink && (
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-colors"
-            >
-              GitHub
+              View Project
             </a>
           )}
         </div>
@@ -89,29 +79,17 @@ export default function ProjectCard({
           ))}
         </div>
 
-        {/* Action buttons */}
-        <div className="flex space-x-3">
-          {liveLink && (
-            <a
-              href={liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-2 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover-lift"
-            >
-              View Live
-            </a>
-          )}
-          {githubLink && (
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 border-2 border-gray-300 text-gray-700 text-center py-2 px-4 rounded-lg font-medium hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500 dark:hover:text-blue-400 dark:hover:bg-slate-800"
-            >
-              Source Code
-            </a>
-          )}
-        </div>
+        {/* Action button */}
+        {(liveLink || githubLink) && (
+          <a
+            href={liveLink || githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-2.5 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover-lift"
+          >
+            View Project
+          </a>
+        )}
       </div>
     </div>
   );

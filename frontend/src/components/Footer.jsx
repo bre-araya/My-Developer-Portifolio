@@ -116,7 +116,7 @@ const Footer = () => {
                 <div className="w-7 md:w-8 h-7 md:h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mr-2 md:mr-3 flex-shrink-0">
                   <span className="text-xs md:text-sm">📍</span>
                 </div>
-                <span className="text-gray-300 text-xs md:text-sm">Addis Ababa, Ethiopia</span>
+                <span className="text-gray-300 text-xs md:text-sm">Mekelle, Ethiopia</span>
               </div>
             </div>
           </div>

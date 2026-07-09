@@ -193,7 +193,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-800 dark:text-slate-100 text-sm md:text-base">Email</h4>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base">berihu@example.com</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base">berihuaraya374@gmail.com</p>
                   </div>
                 </div>
 
@@ -203,7 +203,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-800 dark:text-slate-100 text-sm md:text-base">Phone</h4>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base">+251 911 123 456</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base">+251 972 129 362</p>
                   </div>
                 </div>
 
@@ -213,7 +213,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-800 dark:text-slate-100 text-sm md:text-base">Location</h4>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base">Addis Ababa, Ethiopia</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base">Mekelle, Ethiopia</p>
                   </div>
                 </div>
               </div>
@@ -227,23 +227,41 @@ export default function Contact() {
               </p>
 
               <div className="flex gap-3 md:gap-4">
+                {/* LinkedIn */}
                 <a
-                  href="#"
-                  className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
+                  href="https://www.linkedin.com/in/berihu-araya-159b0033b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="LinkedIn"
+                  className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"
                 >
-                  <span className="text-lg md:text-xl">💼</span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                    <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.5 9.5h2.88V18H5.5V9.5Zm4.7 0h2.76v1.14h.04c.38-.72 1.32-1.48 2.72-1.48 2.91 0 3.45 1.91 3.45 4.4V18h-2.88v-7.8c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.11V18H10.2V9.5Z"/>
+                  </svg>
                 </a>
+
+                {/* Gmail */}
                 <a
-                  href="#"
-                  className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
+                  href="mailto:berihuaraya374@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Berihu,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
+                  title="Email Me"
+                  className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"
                 >
-                  <span className="text-lg md:text-xl">🐦</span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                    <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Zm13.1 1.1-5.1 4.1-5.1-4.1h10.2Zm-10.2 1.5v7.3h10.2v-7.3l-5.1 4.1-5.1-4.1Z"/>
+                  </svg>
                 </a>
+
+                {/* GitHub */}
                 <a
-                  href="#"
-                  className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
+                  href="https://github.com/bre-araya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="GitHub"
+                  className="w-10 md:w-12 h-10 md:h-12 bg-gradient-to-r from-gray-700 to-black rounded-xl flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-gray-900/20"
                 >
-                  <span className="text-lg md:text-xl">💻</span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6">
+                    <path d="M12 .3a12 12 0 0 0-3.8 23.2c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.5-.8 1.5-.8.6-1.2 1.6-1.7 2.6-1.3.1-.9.4-1.5.7-1.8-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.8.8.6A12 12 0 0 0 12 .3Z"/>
+                  </svg>
                 </a>
               </div>
             </div>
