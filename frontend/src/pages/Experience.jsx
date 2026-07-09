@@ -16,7 +16,7 @@ export default function Experience() {
     },
     {
       company: "Geez EdTech",
-      position: "Software Developer Intern (Backend Developer)",
+      position: "Software Developer (Backend Developer)",
       period: "June 2025 - September 2025",
       description: "Worked as a Backend Developer, contributing to the development of scalable web applications using the MERN stack. Collaborated with frontend developers and senior engineers to build secure APIs, manage databases, and implement backend business logic for real-world applications.",
       achievements: [
