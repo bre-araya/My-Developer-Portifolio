@@ -2,31 +2,29 @@ export default function Experience() {
   const experiences = [
     {
       company: "Niyat Consultancy & Software Company",
-      position: "Odoo Developer",
+      position: "Odoo ERP Developer",
       period: "September 2025 - Present",
-      description: "As an Odoo Developer, I design, customize, and maintain business management solutions that streamline workflows and improve operational efficiency. I collaborate with cross-functional teams to develop scalable ERP modules, integrate third-party services, and deliver reliable business applications tailored to client requirements.",
+      description: "Developed and customized Odoo ERP solutions for Wagwago Business Group, building scalable business modules and automating workflows to improve operational efficiency across multiple business operations.",
       achievements: [
-        "Developed and customized Odoo modules using Python and the Odoo framework to meet diverse business requirements",
-        "Designed and extended ERP functionalities across Sales, Purchase, Inventory, Accounting, HR, CRM, and other business modules",
-        "Built custom models, views, reports, workflows, and automated business processes",
-        "Created REST API integrations with external systems and third-party services for seamless data exchange",
-        "Implemented backend business logic with clean, maintainable, and scalable code following software engineering best practices"
+        "Designed and extended ERP functionalities across Sales, Purchase, Inventory, Accounting, HR, CRM, and other core business modules based on organizational requirements",
+        "Built custom models, views, reports, workflows, and backend business logic using Python and the Odoo framework while following clean, maintainable, and scalable software engineering practices",
+        "Integrated Odoo with external systems and third-party services through REST APIs, enabling secure and reliable data exchange between business applications",
+        "Collaborated with cross-functional teams to deliver robust ERP solutions tailored to business processes and operational needs"
       ],
-      technologies: ["Odoo", "Python", "PostgreSQL", "XML", "JavaScript", "REST APIs", "Git"]
+      technologies: ["Odoo", "Python", "PostgreSQL", "XML", "JavaScript", "Git"]
     },
     {
       company: "Geez EdTech",
-      position: "Software Developer (Backend Developer)",
+      position: "Backend Developer",
       period: "June 2025 - September 2025",
-      description: "Worked as a Backend Developer, contributing to the development of scalable web applications using the MERN stack. Collaborated with frontend developers and senior engineers to build secure APIs, manage databases, and implement backend business logic for real-world applications.",
+      description: "Contributed to the development of scalable backend services for web applications using Node.js, Express.js, and MongoDB.",
       achievements: [
-        "Developed RESTful APIs using Node.js and Express.js",
-        "Designed and managed MongoDB databases with efficient schema design and query optimization",
-        "Implemented backend business logic, authentication, and authorization using JWT",
-        "Integrated frontend applications with backend services to ensure seamless data flow",
-        "Built CRUD operations and optimized API performance for scalability and reliability"
+        "Designed and implemented secure RESTful APIs, backend business logic, authentication, and authorization using JWT",
+        "Built and optimized MongoDB database schemas, CRUD operations, and API endpoints to ensure efficient data management and application performance",
+        "Integrated frontend applications with backend services to provide seamless data flow and reliable user experiences",
+        "Collaborated with frontend developers and senior engineers to deliver scalable, maintainable, and production-ready web applications"
       ],
-      technologies: ["MongoDB", "Express.js", "React", "Node.js", "JavaScript", "REST APIs", "JWT", "Git", "GitHub"]
+      technologies: ["Node.js", "Express.js", "MongoDB", "React", "JavaScript", "REST APIs", "JWT", "Git", "GitHub"]
     }
   ];
 
@@ -41,49 +39,45 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="relative">
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-purple-600"></div>
-
-          <div className="space-y-8 md:space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={exp.company} className={`relative flex items-start ${index % 2 === 0 ? 'fade-in' : 'fade-in-delayed'}`}>
-                <div className="absolute left-2 md:left-6 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white dark:border-slate-900 shadow-lg"></div>
-
-                <div className="ml-12 md:ml-16 glass-effect rounded-2xl p-5 md:p-8 card-shadow w-full">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 md:mb-6">
-                    <div>
-                      <h3 className="text-lg md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-1 md:mb-2">{exp.position}</h3>
-                      <h4 className="text-base md:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-1">{exp.company}</h4>
-                      <p className="text-slate-500 dark:text-slate-400 font-medium text-sm md:text-base">{exp.period}</p>
-                    </div>
-                    <div className="mt-3 md:mt-0">
-                      <span className="bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-950/50 dark:to-blue-950/50 text-green-800 dark:text-green-300 px-3 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-semibold">
-                        {exp.technologies.length} Technologies
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="text-slate-700 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
-                    {exp.description}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          {experiences.map((exp, index) => (
+            <div key={exp.company} className="fade-in">
+              <div className="glass-effect rounded-2xl p-6 md:p-8 card-shadow h-full hover:shadow-xl transition-shadow duration-300 border border-blue-200/50 dark:border-blue-900/50">
+                {/* Header Section */}
+                <div className="mb-6 pb-6 border-b border-blue-100 dark:border-blue-900/30">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">{exp.position}</h3>
+                  <h4 className="text-base md:text-lg text-blue-600 dark:text-blue-400 font-semibold mb-2">{exp.company}</h4>
+                  <p className="text-slate-500 dark:text-slate-400 font-medium text-sm md:text-base inline-flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></span>
+                    {exp.period}
                   </p>
+                </div>
 
-                  <div className="mb-4 md:mb-6">
-                    <h5 className="font-semibold text-slate-800 dark:text-slate-100 mb-2 md:mb-3 text-sm md:text-base">Key Achievements:</h5>
-                    <ul className="space-y-1 md:space-y-2">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="text-green-500 mr-2 md:mr-3 mt-0.5 text-sm">✓</span>
-                          <span className="text-slate-600 dark:text-slate-300 text-sm">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {/* Description */}
+                <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed text-sm md:text-base">
+                  {exp.description}
+                </p>
 
+                {/* Achievements */}
+                <div className="mb-6">
+                  <ul className="space-y-2 md:space-y-3">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="inline-flex items-center justify-center w-6 h-6 mr-2 md:mr-3 mt-0.5 flex-shrink-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full text-white text-sm font-bold">✓</span>
+                        <span className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div>
+                  <p className="text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 mb-3 tracking-wide">Technologies</p>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-950/60 dark:to-purple-950/60 text-blue-800 dark:text-blue-200 text-xs md:text-sm font-medium px-2 md:px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800"
+                        className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-950/60 dark:to-purple-950/60 text-blue-800 dark:text-blue-200 text-xs font-medium px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-800 hover:shadow-md transition-shadow"
                       >
                         {tech}
                       </span>
@@ -91,8 +85,8 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -9,11 +9,11 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div className="glass-effect rounded-2xl p-6 md:p-8 card-shadow fade-in">
           <div className="mb-6">
-            <h3 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-3 md:mb-4">My Background</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-3 md:mb-4">About Me</h3>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base">
-              I am a Computer Science and Engineering graduate from Mekelle University,
-              specializing in MERN full-stack development, Odoo ERP customization, and
-              Python/Django backend systems.
+              I'm a passionate Software Engineer with professional experience in Odoo ERP development
+                and Full-Stack MERN development. I specialize in building scalable enterprise 
+                solutions, modern web applications, and secure backend systems that solve real-world business challenges.
             </p>
           </div>
 

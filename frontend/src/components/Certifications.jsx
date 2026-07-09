@@ -117,10 +117,15 @@ export default function Certifications() {
               </ul>
 
               <div className="flex flex-col gap-3">
-                <div className="rounded-3xl bg-slate-100 dark:bg-slate-900/80 p-4 border border-slate-200 dark:border-slate-700">
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400 font-semibold">Issued</p>
-                  <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-slate-100">{cert.date}</p>
-                </div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 px-3 py-1.5">
+  <span className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400">
+    Issued
+  </span>
+  <span className="h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-600" />
+  <span className="text-sm font-medium text-slate-900 dark:text-slate-100">
+    {cert.date}
+  </span>
+</div>
                 <button
                   type="button"
                   onClick={() => setSelectedCert(cert)}

@@ -104,11 +104,18 @@ export default function Navbar() {
       
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-lg">
         <div className="flex justify-between items-center py-4 px-4 md:px-20">
-          {/* Logo */}
-          <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 
-          bg-clip-text text-transparent select-none hover:scale-105 transition-transform duration-300">
-            Berihu Araya
-          </h1>
+          {/* Logo with Photo */}
+          <div className="flex items-center gap-3">
+            <img 
+              src="/profile.jpeg" 
+              alt="Profile"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-blue-600 shadow-md"
+            />
+            <h1 className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 
+            bg-clip-text text-transparent select-none hover:scale-105 transition-transform duration-300">
+              Berihu Araya
+            </h1>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm font-medium">
@@ -145,7 +152,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Menu */}
         <div className={`md:hidden fixed inset-x-0 top-16 z-40 border-t border-slate-300 bg-white/95 backdrop-blur-xl shadow-xl transition-all duration-300 dark:border-slate-700 dark:bg-slate-950/95 ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
-          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 py-4 ">
+          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-4 ">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
 
