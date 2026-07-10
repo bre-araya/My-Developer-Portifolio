@@ -33,24 +33,16 @@ export default function Projects() {
       description: "Intelligent chatbot built with natural language processing for automated customer support. Integrates with existing CRM systems and provides 24/7 customer assistance with human handoff capabilities.",
       tech: ["Python", "Django", "NLP", "Dialogflow", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500&h=300&fit=crop",
-      liveLink: "https://ai-chatbot-demo.vercel.app",
-      githubLink: "https://github.com/berihu-araya/ai-chatbot"
+      liveLink: "https://github.com/bre-araya/chatbot",
+      githubLink: "https://github.com/berihu-araya/chatbot"
     },
     {
-      title: "Real Estate Management System",
-      description: "Comprehensive property management platform with listing management, tenant tracking, maintenance requests, and financial reporting. Includes mobile-responsive design and automated rent collection.",
-      tech: ["React", "Django REST", "PostgreSQL", "AWS S3", "Stripe"],
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop",
-      liveLink: "https://real-estate-management-demo.vercel.app",
-      githubLink: "https://github.com/berihu-araya/real-estate-management"
-    },
-    {
-      title: "Task Management Dashboard",
-      description: "Collaborative project management tool with real-time updates, team collaboration features, progress tracking, and automated reporting. Built with modern UI/UX principles and scalable architecture.",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB", "Chart.js"],
+      title: "Project Management Tools Dashboard",
+      description: "A collaborative project management dashboard for tracking tasks, organizing work, and monitoring team progress in one place. Designed to make project planning and execution more visible and efficient.",
+      tech: ["React", "GitHub Projects", "Tailwind CSS", "JavaScript"],
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-      liveLink: "https://task-management-demo.vercel.app",
-      githubLink: "https://github.com/berihu-araya/task-management-dashboard"
+      liveLink: "https://github.com/bre-araya/project-managment-Tools",
+      githubLink: "https://github.com/bre-araya/project-managment-Tools"
     }
   ];
 
