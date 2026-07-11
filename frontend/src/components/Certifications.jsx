@@ -3,8 +3,40 @@ import aiCertificate from '../assets/Artificial Intelligence.png';
 import dataVisualizationCertificate from '../assets/Data Visualizations from courcera.png';
 import pythonMachineLearningCertificate from '../assets/Python ML.png';
 import webDevelopmentCertificate from '../assets/Web Development from IBM.png';
+import odooCertificate from '../assets/Odoo.png';
 
 const certifications = [
+
+  {
+    id: 'web-development-ibm',
+    title: 'Web Development',
+    topic: 'Frontend Development',
+    issuer: 'IBM',
+    date: '2025',
+    description: 'Reflects hands-on experience building polished, responsive web applications with modern development practices.',
+    highlights: [
+      'Responsive interfaces',
+      'Web app development',
+      'Modern frontend practices',
+    ],
+    image: webDevelopmentCertificate,
+    link: webDevelopmentCertificate,
+  },
+  {
+    id: 'odoo-erp',
+    title: 'Odoo ERP Development',
+    topic: 'ERP Development',
+    issuer: 'Odoo S.A.',
+    date: '2025',
+    description: 'Shows practical experience customizing and extending Odoo ERP solutions for business workflows and operational automation.',
+    highlights: [
+      'Custom Odoo modules',
+      'Workflow automation',
+      'Business process customization',
+    ],
+    image: odooCertificate,
+    link: odooCertificate,
+  },
   {
     id: 'artificial-intelligence',
     title: 'Artificial Intelligence',
@@ -50,21 +82,8 @@ const certifications = [
     image: pythonMachineLearningCertificate,
     link: pythonMachineLearningCertificate,
   },
-  {
-    id: 'web-development-ibm',
-    title: 'Web Development',
-    topic: 'Frontend Development',
-    issuer: 'IBM',
-    date: '2025',
-    description: 'Reflects hands-on experience building polished, responsive web applications with modern development practices.',
-    highlights: [
-      'Responsive interfaces',
-      'Web app development',
-      'Modern frontend practices',
-    ],
-    image: webDevelopmentCertificate,
-    link: webDevelopmentCertificate,
-  },
+  
+  
 ];
 
 export default function Certifications() {

@@ -33,6 +33,7 @@ export default function Navbar() {
       '/skills': 'skills',
       '/experience': 'experience',
       '/projects': 'projects',
+      '/certifications': 'certifications',
       '/contact': 'contact',
     };
 
@@ -65,31 +66,45 @@ export default function Navbar() {
       return undefined;
     }
 
-    const sections = navLinks
-      .map((link) => document.getElementById(link.id))
-      .filter(Boolean);
+    const getCurrentSection = () => {
+      const sections = navLinks
+        .map((link) => document.getElementById(link.id))
+        .filter(Boolean);
 
-    if (!sections.length) return undefined;
+      if (!sections.length) return 'home';
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      const offset = window.scrollY + 180;
+      let closestSection = 'home';
+      let closestDistance = Number.POSITIVE_INFINITY;
 
-        if (visibleEntry) {
-          setActiveSection(visibleEntry.target.id);
+      sections.forEach((section) => {
+        const distance = Math.abs(section.offsetTop - offset);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = section.id;
         }
-      },
-      {
-        threshold: [0.2, 0.4, 0.6],
-        rootMargin: '-20% 0px -45% 0px',
-      }
-    );
+      });
 
-    sections.forEach((section) => observer.observe(section));
+      return closestSection;
+    };
 
-    return () => observer.disconnect();
+    const updateActiveSection = () => {
+      setActiveSection(getCurrentSection());
+    };
+
+    updateActiveSection();
+
+    const handleScroll = () => {
+      window.requestAnimationFrame(updateActiveSection);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, [location.pathname, navLinks]);
 
   return (
